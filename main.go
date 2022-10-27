@@ -14,5 +14,4 @@ func main() {
 	dockerClient := connectors.DockerClient()
 
 	view.MainView(windowSize, *dockerClient)
-
 }

@@ -19,11 +19,6 @@ func RedisConnector() redis.Client {
 	return *redisClient
 }
 
-func RedisPing(redisClient *redis.Client) {
-	pong, pongErr := redisClient.Ping().Result()
-	fmt.Println("Error: ", pong, pongErr)
-}
-
 func SetImage(redisClient redis.Client, dockerImage types.ImageSummary) {
 	image := domain.Image{
 		Prefix:     "image",
