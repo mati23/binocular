@@ -42,7 +42,7 @@ func fillGrid(dockerImages []types.ImageSummary, dockerClient client.Client) []*
 		filter := filters.NewArgs(filters.KeyValuePair{Key: "ancestor", Value: image.ID})
 		containerLabels := []types.Container{}
 		dockerContainers := connectors.GetContainersList(&dockerClient, filter)
-		println("Printing containers\n")
+
 		if len(dockerContainers) > 0 {
 			containerLabels = append(containerLabels, dockerContainers...)
 		}
@@ -52,15 +52,16 @@ func fillGrid(dockerImages []types.ImageSummary, dockerClient client.Client) []*
 
 		var accordionItem = widget.NewAccordionItem("",
 			container.NewGridWithRows(1, headderButton, widget.NewLabel(image.ID)))
+		var imageLabel string = dockerImage.RepoTags[0]
 		if len(containerLabels) > 0 {
 			rowContainerLabels := buildRowContainerWithLabels(containerLabels, dockerClient)
 
-			accordionItem = widget.NewAccordionItem(dockerImage.ID,
+			accordionItem = widget.NewAccordionItem(imageLabel,
 				container.NewGridWithRows(2, headderButton, rowContainerLabels))
 			accordionItems = append(accordionItems, accordionItem)
 
 		} else {
-			accordionItem = widget.NewAccordionItem(dockerImage.ID,
+			accordionItem = widget.NewAccordionItem(imageLabel,
 				container.NewGridWithRows(1, headderButton))
 			accordionItems = append(accordionItems, accordionItem)
 		}
@@ -122,11 +123,15 @@ func MainView(windowSize fyne.Size, dockerClient client.Client) {
 
 	imagesGrid.Add(accordion)
 
+	images := BuildCharts()
+
 	tabs := container.NewAppTabs(
 		container.NewTabItem("Images", imagesGrid),
+		container.NewTabItem("Graphs", &images),
 		container.NewTabItem("Containers", widget.NewLabel("Container")),
 		container.NewTabItem("Volumes", widget.NewLabel("Volumes")),
 	)
+
 	window.SetContent(tabs)
 
 	fmt.Printf("Starting Excecution\n")

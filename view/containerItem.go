@@ -86,7 +86,6 @@ func (containerItem *ContainerItem) buildRunningContainerView() {
 	containerItem.DockerContainer = connectors.GetContainerById(containerItem.DockerContainer.ID, containerItem.DockerClient)
 }
 func (containerItem *ContainerItem) buildStoppedContainerView() {
-	println("Stopping Container")
 	containerItem.StatusLabel.Text = "Stopped"
 	containerItem.StatusLabel.Color = color.RGBA{R: 255, G: 1, B: 1, A: 255}
 	containerItem.StatusLabel.TextStyle.Bold = true

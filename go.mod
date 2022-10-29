@@ -15,16 +15,20 @@ require (
 	github.com/docker/distribution v2.8.1+incompatible // indirect
 	github.com/docker/go-connections v0.4.0 // indirect
 	github.com/docker/go-units v0.5.0 // indirect
+	github.com/dustin/go-humanize v1.0.0 // indirect
 	github.com/fredbi/uri v0.0.0-20221012073901-fb871453c6d3 // indirect
 	github.com/fsnotify/fsnotify v1.6.0 // indirect
 	github.com/fyne-io/gl-js v0.0.0-20220802150000-8e339395f381 // indirect
 	github.com/fyne-io/glfw-js v0.0.0-20220517201726-bebc2019cd33 // indirect
 	github.com/fyne-io/image v0.0.0-20221020213044-f609c6a24345 // indirect
+	github.com/go-echarts/go-echarts v1.0.0 // indirect
+	github.com/go-echarts/go-echarts/v2 v2.2.4 // indirect
 	github.com/go-gl/gl v0.0.0-20211210172815-726fda9656d6 // indirect
 	github.com/go-gl/glfw/v3.3/glfw v0.0.0-20221017161538-93cebf72946b // indirect
 	github.com/godbus/dbus/v5 v5.1.0 // indirect
 	github.com/gogo/protobuf v1.3.2 // indirect
 	github.com/goki/freetype v0.0.0-20220119013949-7a161fd3728c // indirect
+	github.com/golang/freetype v0.0.0-20170609003504-e2365dfdc4a0 // indirect
 	github.com/gopherjs/gopherjs v1.17.2 // indirect
 	github.com/jsummers/gobmp v0.0.0-20151104160322-e2ba15ffa76e // indirect
 	github.com/moby/term v0.0.0-20220808134915-39b0c02b01ae // indirect
@@ -40,6 +44,9 @@ require (
 	github.com/srwiley/rasterx v0.0.0-20220730225603-2ab79fcdd4ef // indirect
 	github.com/stretchr/testify v1.8.1 // indirect
 	github.com/tevino/abool v1.2.0 // indirect
+	github.com/vicanso/go-charts/v2 v2.4.1 // indirect
+	github.com/wcharczuk/go-chart v2.0.1+incompatible // indirect
+	github.com/wcharczuk/go-chart/v2 v2.1.0 // indirect
 	github.com/yuin/goldmark v1.5.2 // indirect
 	golang.org/x/image v0.1.0 // indirect
 	golang.org/x/mobile v0.0.0-20221020085226-b36e6246172e // indirect
